@@ -1,8 +1,9 @@
 .header {
   max-width: 880px;
-  padding-top: 28px;
-  padding-left: 27px;
+  padding: 28px 0 32px 27px;
   margin: auto;
+
+  border-bottom: 1px solid #545454;
 }
 
 @media (min-width: 425px) {
