@@ -15,3 +15,21 @@
 /* footer */
 @import url('../blocks/footer/footer.css');
 @import url('../blocks/footer/__copyright/footer__copyright.css');
+
+/* profile */
+@import url('../blocks/profile/profile.css');
+@import url('../blocks/profile/__avatar/profile__avatar.css');
+@import url('../blocks/profile/__info/profile__info.css');
+@import url('../blocks/profile/__info-name/profile__info-name.css');
+@import url('../blocks/profile/__info-subline/profile__info-subline.css');
+@import url('../blocks/profile/__info-edit-button/profile__info-edit-button.css');
+@import url('../blocks/profile/__add-button/profile__add-button.css');
+
+/* places */
+@import url('../blocks/places/places.css');
+
+/* cards */
+@import url('../blocks/cards/cards.css');
+@import url('../blocks/cards/__item/cards__item.css');
+@import url('../blocks/cards/__image/cards__image.css');
+@import url('../blocks/cards/__title/cards__title.css');

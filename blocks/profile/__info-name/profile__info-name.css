@@ -1,0 +1,11 @@
+.profile__info-name {
+  /* max-width: 294px; */
+  display: inline-block;
+  margin: 0;
+  margin-right: 10px;
+  margin-bottom: 14px;
+
+  font-size: 27px;
+  font-weight: 500;
+  line-height: 33px;
+}
