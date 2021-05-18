@@ -3,7 +3,6 @@
   margin: 0;
   margin-right: 10px;
   margin-bottom: 14px;
-
   font-size: 27px;
   font-weight: 500;
   line-height: 33px;
@@ -16,6 +15,8 @@
 
 @media (min-width: 880px) {
   .profile__info-name {
+    margin-right: 18px;
+    margin-bottom: 16px;
     font-size: 42px;
     line-height: 48px;
   }

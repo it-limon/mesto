@@ -3,7 +3,18 @@
   height: 18px;
   padding: 0;
 
+  position: absolute;
+  top: 12px;
+  right: 0;
+
   background: url('../../../images/edit-profile-button.svg') center / 7.5px no-repeat #000;
   border: 1px solid #fff;
   cursor: pointer;
+}
+
+@media (min-width: 880px) {
+  .profile__info-edit-button {
+    width: 24px;
+    height: 24px;
+  }
 }
