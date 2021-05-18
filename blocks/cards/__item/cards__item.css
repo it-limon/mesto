@@ -1,3 +1,9 @@
 .cards__item {
+  border-radius: 4%;
+  background-color: #fff;
+  font-size: 0;
 
+  display: grid;
+  grid-template-columns: 75% 1fr;
+  grid-template-rows: minmax(282px, max-content) minmax(min-content, max-content);
 }
