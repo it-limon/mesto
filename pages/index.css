@@ -23,7 +23,7 @@
 @import url('../blocks/profile/__info-name/profile__info-name.css');
 @import url('../blocks/profile/__info-subline/profile__info-subline.css');
 @import url('../blocks/profile/__info-edit-button/profile__info-edit-button.css');
-@import url('../blocks/profile/__add-button/profile__add-button.css');
+@import url('../blocks/profile/__add-place-button/profile__add-place-button.css');
 
 /* places */
 @import url('../blocks/places/places.css');

@@ -20,7 +20,7 @@
   }
 }
 
-@media (min-width: 1280px) {
+@media (min-width: 880px) {
   .header {
     padding-top: 45px;
     padding-left: 0;

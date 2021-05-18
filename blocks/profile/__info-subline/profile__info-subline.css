@@ -3,3 +3,10 @@
   font-size: 14px;
   line-height: 17px;
 }
+
+@media (min-width: 880px) {
+  .profile__info-subline {
+    font-size: 18px;
+    line-height: 22px;
+  }
+}

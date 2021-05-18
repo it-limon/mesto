@@ -1,4 +1,12 @@
 .profile__info {
   font-size: 0;
   text-align: center;
+  width: 100%;
+}
+
+@media (min-width: 619px) {
+  .profile__info {
+    justify-self: start;
+    text-align: left;
+  }
 }
