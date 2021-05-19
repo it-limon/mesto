@@ -2,11 +2,17 @@
   width: 282px;
   height: 50px;
   padding: 0;
-  margin-top: 10px;
+  margin-top: 6px;
   background: url('../../../images/add-button.svg') center / 16px no-repeat #000;
   border: 2px solid #fff;
   border-radius: 3px;
   cursor: pointer;
+
+  transition: opacity .3s linear;
+}
+
+.profile__add-place-button:hover {
+  opacity: .6;
 }
 
 @media (min-width: 619px) {

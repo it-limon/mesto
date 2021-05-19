@@ -1,6 +1,6 @@
 .header {
   max-width: 880px;
-  padding: 28px 0 32px 27px;
+  padding: 28px 0 27px 27px;
   margin: auto;
 
   border-bottom: 1px solid #545454;
@@ -22,7 +22,8 @@
 
 @media (min-width: 880px) {
   .header {
-    padding-top: 45px;
+    padding-top: 40px;
     padding-left: 0;
+    padding-bottom: 37px;
   }
 }

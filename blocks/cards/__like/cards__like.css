@@ -11,9 +11,9 @@
   align-self: center;
 
   cursor: pointer;
-  transition: opacity 0.3s linear;
+  transition: opacity .3s linear;
 }
 
 .cards__like:hover {
-  opacity: 0.5;
+  opacity: .5;
 }

@@ -1,8 +1,6 @@
 .profile__info {
-  font-size: 0;
   text-align: center;
   width: 100%;
-  position: relative;
 }
 
 @media (min-width: 619px) {

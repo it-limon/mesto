@@ -3,13 +3,15 @@
   height: 18px;
   padding: 0;
 
-  position: absolute;
-  top: 12px;
-  right: 0;
-
   background: url('../../../images/edit-profile-button.svg') center / 7.5px no-repeat #000;
   border: 1px solid #fff;
   cursor: pointer;
+
+  transition: opacity .3s linear;
+}
+
+.profile__info-edit-button:hover {
+  opacity: .6;
 }
 
 @media (min-width: 880px) {
