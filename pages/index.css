@@ -35,3 +35,17 @@
 /* footer */
 @import url('../blocks/footer/footer.css');
 @import url('../blocks/footer/__copyright/footer__copyright.css');
+
+/* form */
+@import url('../blocks/form/form.css');
+@import url('../blocks/form/__profile/form__profile.css');
+@import url('../blocks/form/__heading/form__heading.css');
+@import url('../blocks/form/__input-container/form__input-container.css');
+@import url('../blocks/form/__item/form__item.css');
+@import url('../blocks/form/__item/_el/form__item_el_name.css');
+@import url('../blocks/form/__item/_el/form__item_el_subline.css');
+@import url('../blocks/form/__button-submit/form__button-submit.css');
+@import url('../blocks/form/__button-close/form__button-close.css');
+
+/* button */
+@import url('../blocks/button/button.css');

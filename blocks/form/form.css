@@ -1,0 +1,23 @@
+.form {
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.form::before {
+  content: "";
+  opacity: .5;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  position: absolute;
+}
