@@ -21,11 +21,11 @@
         <div class="profile__info">
           <div class="profile__container">
             <h1 class="profile__info-name">Жак-Ив Кусто</h1>
-            <button class="profile__info-edit-button" type="button"></button>
+            <button class="button profile__info-edit-button" type="button"></button>
           </div>
           <p class="profile__info-subline">Исследователь океана</p>
         </div>
-        <button class="profile__add-place-button" type="button"></button>
+        <button class="button profile__add-place-button" type="button"></button>
       </section>
 
       <section class="places">
@@ -33,33 +33,33 @@
           <li class="cards__item">
             <img class="cards__image" src="./images/karachaevo-cherkessia.png" alt="Карачаево-Черкессия">
             <h2 class="cards__title">Карачаево-Черкессия</h2>
-            <button class="cards__like"></button>
+            <button class="button cards__like"></button>
           </li>
           <li class="cards__item">
             <img class="cards__image" src="./images/elbrus.png" alt="Эльбрус">
             <h2 class="cards__title">Гора Эльбрус</h2>
-            <button class="cards__like"></button>
+            <button class="button cards__like"></button>
           </li>
           <li class="cards__item">
             <img class="cards__image" src="./images/dombai.png" alt="Домбай">
             <h2 class="cards__title">Домбай</h2>
-            <button class="cards__like"></button>
+            <button class="button cards__like"></button>
           </li>
 
           <li class="cards__item">
             <img class="cards__image" src="./images/sopka.png" alt="Ключевская Сопка">
             <h2 class="cards__title">Ключевская Сопка</h2>
-            <button class="cards__like"></button>
+            <button class="button cards__like"></button>
           </li>
           <li class="cards__item">
             <img class="cards__image" src="./images/kucherlinskoe.png" alt="Кучерлинское озеро">
             <h2 class="cards__title">Кучерлинское озеро</h2>
-            <button class="cards__like"></button>
+            <button class="button cards__like"></button>
           </li>
           <li class="cards__item">
             <img class="cards__image" src="./images/vost_sayan.png" alt="Восточный Саян">
             <h2 class="cards__title">Восточный Саян</h2>
-            <button class="cards__like"></button>
+            <button class="button cards__like"></button>
           </li>
         </ul>
       </section>
@@ -68,16 +68,17 @@
     <footer class="footer">
       <p class="footer__copyright">&copy; 2021 Mesto Russia</p>
     </footer>
-
-    <section class="modal">
-      <h2>Редактировать профиль</h2>
-      <form class="modal__form">
-        <input class="profile-name" id="user-login" type="text" name="login" placeholder="Имя">
-        <input class="login-icon-password" id="user-password" type="password" name="password" placeholder="О себе">
-        <button class="button" type="submit">Сохранить</button>
-      </form>
-      <button class="modal-close" type="button">Закрыть</button>
-  </section>
   </div>
+  <section class="form">
+    <form class="form__profile">
+      <h2 class="form__heading">Редактировать профиль</h2>
+      <fieldset class="form__input-container">
+        <input class="form__item form__item_el_name" type="text" id="profile-name" name="profile-name" placeholder="Имя">
+        <input class="form__item form__item_el_subline" type="text" id="profile-subline" name="profile-subline" placeholder="О себе">
+      </fieldset>
+      <button class="form__button-submit" type="submit">Сохранить</button>
+      <button class="button form__button-close" type="button"></button>
+    </form>
+  </section>
 </body>
 </html>
