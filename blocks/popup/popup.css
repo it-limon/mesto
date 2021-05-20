@@ -1,8 +1,8 @@
-.form {
+.popup {
   width: 100vw;
   height: 100vh;
 
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
 
@@ -13,7 +13,7 @@
   transform: translate(-50%, -50%);
 }
 
-.form::before {
+.popup::before {
   content: "";
   opacity: .5;
   width: 100%;

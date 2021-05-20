@@ -23,7 +23,7 @@
             <h1 class="profile__info-name">Жак-Ив Кусто</h1>
             <button class="button profile__info-edit-button" type="button"></button>
           </div>
-          <p class="profile__info-subline">Исследователь океана</p>
+          <p class="profile__info-job">Исследователь океана</p>
         </div>
         <button class="button profile__add-place-button" type="button"></button>
       </section>
@@ -69,16 +69,17 @@
       <p class="footer__copyright">&copy; 2021 Mesto Russia</p>
     </footer>
   </div>
-  <section class="form">
-    <form class="form__profile">
-      <h2 class="form__heading">Редактировать профиль</h2>
-      <fieldset class="form__input-container">
-        <input class="form__item form__item_el_name" type="text" id="profile-name" name="profile-name" placeholder="Имя">
-        <input class="form__item form__item_el_subline" type="text" id="profile-subline" name="profile-subline" placeholder="О себе">
+  <section class="popup">
+    <form class="popup__container">
+      <h2 class="popup__heading">Редактировать профиль</h2>
+      <fieldset class="popup__input-container">
+        <input class="popup__item popup__item_el_name" type="text" id="profile-name" name="profile-name" placeholder="Имя" autofocus>
+        <input class="popup__item popup__item_el_job" type="text" id="profile-job" name="profile-job" placeholder="О себе">
       </fieldset>
-      <button class="form__button-submit" type="submit">Сохранить</button>
-      <button class="button form__button-close" type="button"></button>
+      <button class="popup__button-submit" type="submit">Сохранить</button>
+      <button class="button popup__button-close" type="button"></button>
     </form>
   </section>
+  <script src="scripts.js"></script>
 </body>
 </html>

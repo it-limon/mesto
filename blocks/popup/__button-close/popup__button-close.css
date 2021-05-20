@@ -1,4 +1,4 @@
-.form__button-close {
+.popup__button-close {
   width: 26px;
   height: 26px;
   padding: 0;
@@ -13,7 +13,7 @@
 }
 
 @media (min-width: 425px) {
-  .form__button-close {
+  .popup__button-close {
     transform: rotate(-45deg);
     top: -26px;
     right: -26px;
@@ -21,7 +21,7 @@
 }
 
 @media (min-width: 619px) {
-  .form__button-close {
+  .popup__button-close {
     width: 32px;
     height: 32px;
     top: -32px;
@@ -30,7 +30,7 @@
 }
 
 @media (min-width: 880px) {
-  .form__button-close {
+  .popup__button-close {
     width: 40px;
     height: 40px;
     top: -40px;
