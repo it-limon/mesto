@@ -1,14 +1,15 @@
-const profileName = document.querySelector('.profile__info-name');
-const profileJob = document.querySelector('.profile__info-job');
+let profileName = document.querySelector('.profile__info-name');
+let profileJob = document.querySelector('.profile__info-job');
 
-const infoEditBtn = document.querySelector('.profile__info-edit-button');
+let infoEditBtn = document.querySelector('.profile__info-edit-button');
 
-const popup = document.querySelector('.popup');
+let popup = document.querySelector('.popup');
+let popupContainer = document.querySelector('.popup__container');
 
-const submitPopupBtn = popup.querySelector('.popup__button-submit');
-const closePopupBtn = popup.querySelector('.popup__button-close');
-const inputName = popup.querySelector('.popup__item_el_name');
-const inputJob = popup.querySelector('.popup__item_el_job');
+let submitPopupBtn = popupContainer.querySelector('.popup__button-submit');
+let closePopupBtn = popupContainer.querySelector('.popup__button-close');
+let inputName = popupContainer.querySelector('.popup__item_el_name');
+let inputJob = popupContainer.querySelector('.popup__item_el_job');
 
 const openPopupHandler = () => {
   inputName.value = profileName.textContent;
@@ -32,4 +33,4 @@ const submitPopupHandler = (evt) => {
 
 infoEditBtn.addEventListener('click', openPopupHandler);
 closePopupBtn.addEventListener('click', closePopupHandler);
-submitPopupBtn.addEventListener('click', submitPopupHandler);
+popupContainer.addEventListener('submit', submitPopupHandler);
