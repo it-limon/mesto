@@ -3,7 +3,7 @@
   padding: 28px 0 27px 27px;
   margin: auto;
 
-  border-bottom: 1px solid #545454;
+  border-bottom: 1px solid rgba(84, 84, 84, .75);
 }
 
 @media (min-width: 425px) {

@@ -6,9 +6,14 @@
   justify-self: end;
   border: none;
 
-  background: url('../../../images/cards-like.svg') center / 100% no-repeat;
+  background: url('../../../images/cards-like.svg') center / cover no-repeat transparent;
 
   align-self: center;
 
+  transition: opacity .3s linear;
   cursor: pointer;
+}
+
+.cards__like:hover {
+  opacity: .5;
 }
