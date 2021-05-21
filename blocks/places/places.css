@@ -1,11 +1,5 @@
 .places {
+  width: calc(100% - 19px * 2);
   max-width: 880px;
-  padding: 0 19px 0;
   margin: auto;
-}
-
-@media (min-width: 880px) {
-  .places {
-    padding: 0;
-  }
 }

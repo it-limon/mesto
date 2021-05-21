@@ -10,11 +10,12 @@
   top: -45px;
   right: 0;
   cursor: pointer;
+
+  transform: rotate(-45deg);
 }
 
 @media (min-width: 425px) {
   .popup__button-close {
-    transform: rotate(-45deg);
     top: -26px;
     right: -26px;
   }
