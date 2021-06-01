@@ -14,11 +14,11 @@ const openProfilePopupHandler = () => {
   inputProfileName.value = profileName.textContent;
   inputProfileJob.value = profileJob.textContent;
 
-  togglePopupHandler(profilePopup);
+  togglePopup(profilePopup);
 }
 
 const closeProfilePopupHandler = () => {
-  togglePopupHandler(profilePopup);
+  togglePopup(profilePopup);
 }
 
 const submitProfileFormHandler = (evt) => {
@@ -27,7 +27,7 @@ const submitProfileFormHandler = (evt) => {
   profileName.textContent = inputProfileName.value;
   profileJob.textContent = inputProfileJob.value;
 
-  togglePopupHandler(profilePopup);
+  togglePopup(profilePopup);
 }
 
 // Cards
@@ -47,11 +47,11 @@ const openCardPopupHandler = () => {
   inputCardName.value = '';
   inputCardLink.value = '';
 
-  togglePopupHandler(cardPopup);
+  togglePopup(cardPopup);
 }
 
 const closeCardPopupHandler = () => {
-  togglePopupHandler(cardPopup);
+  togglePopup(cardPopup);
 }
 
 const submitCardFormHandler = (evt) => {
@@ -59,10 +59,10 @@ const submitCardFormHandler = (evt) => {
 
   addCard(getCard({name: inputCardName.value, link: inputCardLink.value}));
 
-  togglePopupHandler(cardPopup);
+  togglePopup(cardPopup);
 }
 
-const togglePopupHandler = (popup) => popup.classList.toggle('popup_opened');
+const togglePopup = (popup) => popup.classList.toggle('popup_opened');
 
 // Функция создания карточки
 const getCard = ({name, link}) => {
@@ -72,12 +72,14 @@ const getCard = ({name, link}) => {
   cardsImage.src = link;
   cardsImage.alt = name;
 
-  const cardsTitle = cardsItem.querySelector('.cards__title');
-  cardsTitle.textContent = name;
+  cardsItem.querySelector('.cards__title').textContent = name;
 
-  const likeBtn = cardsItem.querySelector('.cards__like');
-  likeBtn.addEventListener('click', (evt) => {
+  cardsItem.querySelector('.cards__like').addEventListener('click', (evt) => {
     evt.target.classList.toggle('cards__like_active');
+  });
+
+  cardsItem.querySelector('.cards__delete-button').addEventListener('click', (evt) => {
+    evt.target.closest('.cards__item').remove();
   });
 
   return cardsItem;

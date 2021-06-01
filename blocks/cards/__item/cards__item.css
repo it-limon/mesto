@@ -6,4 +6,12 @@
   display: grid;
   grid-template-columns: 75% 1fr;
   grid-template-rows: repeat(2, min-content);
+
+  position: relative;
+}
+
+@media (min-width: 619px) {
+  .cards__item {
+    max-width: 430px;
+  }
 }
