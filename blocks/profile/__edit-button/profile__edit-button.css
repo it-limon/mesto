@@ -1,4 +1,4 @@
-.profile__edit-info-button {
+.profile__edit-button {
   width: 18px;
   height: 18px;
   padding: 0;
@@ -9,7 +9,7 @@
 }
 
 @media (min-width: 880px) {
-  .profile__edit-info-button {
+  .profile__edit-button {
     width: 24px;
     height: 24px;
   }

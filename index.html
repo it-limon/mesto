@@ -20,10 +20,10 @@
         <img class="profile__avatar" src="./images/avatar.png" alt="Аватар">
         <div class="profile__info">
           <div class="profile__container">
-            <h1 class="profile__info-name">Жак-Ив Кусто</h1>
-            <button class="button profile__edit-info-button" type="button" aria-label="Редактировать профиль"></button>
+            <h1 class="profile__name">Жак-Ив Кусто</h1>
+            <button class="button profile__edit-button" type="button" aria-label="Редактировать профиль"></button>
           </div>
-          <p class="profile__info-job">Исследователь океана</p>
+          <p class="profile__job">Исследователь океана</p>
         </div>
         <button class="button profile__add-card-button" type="button" aria-label="Добавить карточку"></button>
       </section>
@@ -39,7 +39,7 @@
       <p class="footer__copyright">&copy; 2021 Mesto Russia</p>
     </footer>
 
-    <section class="popup">
+    <section class="popup popup-profile">
       <div class="popup__container">
         <form class="form form-profile" name="form-profile">
           <h2 class="form__heading">Редактировать профиль</h2>
@@ -53,6 +53,20 @@
       </div>
     </section>
   </div>
+
+  <section class="popup popup-card">
+    <div class="popup__container">
+      <form class="form form-card" name="form-card">
+        <h2 class="form__heading">Редактировать профиль</h2>
+        <fieldset class="form__input-container">
+          <input class="form__item form__item_el_card-name" type="text" id="card-name" name="card-name" placeholder="Название" required>
+          <input class="form__item form__item_el_card-link" type="text" id="card-link" name="card-name" placeholder="Ссылка на картинку" required>
+        </fieldset>
+        <button class="form__button-submit" type="submit">Создать</button>
+      </form>
+      <button class="popup__button-close" type="button" aria-label="Закрыть"></button>
+    </div>
+  </section>
 
   <template id="card-template">
     <li class="cards__item">

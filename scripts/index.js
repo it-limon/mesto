@@ -1,36 +1,33 @@
-const cardsContainer = document.querySelector('.cards__list');
-const cardTemplate = document.querySelector('#card-template').content;
+// Profile
+const profileName = document.querySelector('.profile__name');
+const profileJob = document.querySelector('.profile__job');
+const editProfileBtn = document.querySelector('.profile__edit-button');
 
-const profileName = document.querySelector('.profile__info-name');
-const profileJob = document.querySelector('.profile__info-job');
+const profilePopup = document.querySelector('.popup-profile');
+const closeProfileBtn = profilePopup.querySelector('.popup__close-button');
 
-const editInfoBtn = document.querySelector('.profile__edit-info-button');
+const formProfile = profilePopup.querySelector('.form-profile');
+const inputProfileName = formProfile.querySelector('.form__item_el_profile-name');
+const inputProfileJob = formProfile.querySelector('.form__item_el_profile-job');
 
-const popup = document.querySelector('.popup');
-const closePopupBtn = popup.querySelector('.popup__close-button');
+const openProfilePopupHandler = () => {
+  inputProfileName.value = profileName.textContent;
+  inputProfileJob.value = profileJob.textContent;
 
-const formProfile = popup.querySelector('.form-profile');
-const submitProfileBtn = formProfile.querySelector('.form__submit-button');
-
-const inputName = formProfile.querySelector('.form__item_el_profile-name');
-const inputJob = formProfile.querySelector('.form__item_el_profile-job');
-
-const togglePopupHandler = () => popup.classList.toggle('popup_opened');
-
-const openPopupHandler = () => {
-  inputName.value = profileName.textContent;
-  inputJob.value = profileJob.textContent;
-
-  togglePopupHandler();
+  togglePopupHandler(profilePopup);
 }
 
-const submitFormProfileHandler = evt => {
+const closeProfilePopupHandler = () => {
+  togglePopupHandler(profilePopup);
+}
+
+const submitFormProfileHandler = (evt) => {
   evt.preventDefault();
 
-  profileName.textContent = inputName.value;
-  profileJob.textContent = inputJob.value;
+  profileName.textContent = inputProfileName.value;
+  profileJob.textContent = inputProfileJob.value;
 
-  togglePopupHandler();
+  togglePopupHandler(profilePopup);
 }
 
 // Функция создания карточки
@@ -53,7 +50,9 @@ const addCard = (card) => cardsContainer.append(card);
 // Добавим начальный набор карточек
 initialCards.forEach(card => addCard(createCard(card)));
 
+const togglePopupHandler = (popup) => popup.classList.toggle('popup_opened');
+
 // Слушатели
-editInfoBtn.addEventListener('click', openPopupHandler);
-closePopupBtn.addEventListener('click', togglePopupHandler);
+editProfileBtn.addEventListener('click', openProfilePopupHandler);
+closeProfileBtn.addEventListener('click', closeProfilePopupHandler);
 formProfile.addEventListener('submit', submitFormProfileHandler);
