@@ -17,10 +17,6 @@ const openProfilePopupHandler = () => {
   togglePopup(profilePopup);
 }
 
-const closeProfilePopupHandler = () => {
-  togglePopup(profilePopup);
-}
-
 const submitProfileFormHandler = (evt) => {
   evt.preventDefault();
 
@@ -50,10 +46,6 @@ const openCardPopupHandler = () => {
   togglePopup(cardPopup);
 }
 
-const closeCardPopupHandler = () => {
-  togglePopup(cardPopup);
-}
-
 const submitCardFormHandler = (evt) => {
   evt.preventDefault();
 
@@ -61,6 +53,10 @@ const submitCardFormHandler = (evt) => {
 
   togglePopup(cardPopup);
 }
+
+// Image
+const imagePopup = document.querySelector('.popup-image');
+const closeImagePopupBtn = imagePopup.querySelector('.popup__close-button');
 
 const togglePopup = (popup) => popup.classList.toggle('popup_opened');
 
@@ -73,6 +69,17 @@ const getCard = ({name, link}) => {
   cardsImage.alt = name;
 
   cardsItem.querySelector('.cards__title').textContent = name;
+
+  cardsItem.querySelector('.cards__image').addEventListener('click', () => {
+    const img = imagePopup.querySelector('.popup__image');
+
+    img.src = link;
+    img.alt = name;
+
+    imagePopup.querySelector('.popup__image-caption').textContent = name;
+
+    togglePopup(imagePopup);
+  });
 
   cardsItem.querySelector('.cards__like').addEventListener('click', (evt) => {
     evt.target.classList.toggle('cards__like_active');
@@ -93,9 +100,11 @@ initialCards.forEach((card) => addCard(getCard(card)));
 
 // Слушатели
 editProfileBtn.addEventListener('click', openProfilePopupHandler);
-closeProfilePopupBtn.addEventListener('click', closeProfilePopupHandler);
+closeProfilePopupBtn.addEventListener('click', () => togglePopup(profilePopup));
 profileForm.addEventListener('submit', submitProfileFormHandler);
 
 addCardBtn.addEventListener('click', openCardPopupHandler);
-closeCardPopupBtn.addEventListener('click', closeCardPopupHandler);
+closeCardPopupBtn.addEventListener('click', () => togglePopup(cardPopup));
 cardForm.addEventListener('submit', submitCardFormHandler);
+
+closeImagePopupBtn.addEventListener('click', () => togglePopup(imagePopup));
