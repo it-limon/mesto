@@ -57,7 +57,7 @@ const closeCardPopupHandler = () => {
 const submitCardFormHandler = (evt) => {
   evt.preventDefault();
 
-  addCard(createCard({name: inputCardName.value, link: inputCardLink.value}));
+  addCard(getCard({name: inputCardName.value, link: inputCardLink.value}));
 
   togglePopupHandler(cardPopup);
 }
@@ -74,6 +74,11 @@ const getCard = ({name, link}) => {
 
   const cardsTitle = cardsItem.querySelector('.cards__title');
   cardsTitle.textContent = name;
+
+  const likeBtn = cardsItem.querySelector('.cards__like');
+  likeBtn.addEventListener('click', (evt) => {
+    evt.target.classList.toggle('cards__like_active');
+  });
 
   return cardsItem;
 }

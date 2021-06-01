@@ -6,7 +6,7 @@
   justify-self: end;
   border: none;
 
-  background: url('../../../images/cards-like.svg') center / cover no-repeat transparent;
+  background: url('../../../images/cards-like.svg') center / cover no-repeat;
 
   align-self: center;
 

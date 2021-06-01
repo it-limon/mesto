@@ -16,7 +16,7 @@
   border-radius: 2px;
 }
 
-.form__submit-button :hover {
+.form__submit-button:hover {
   opacity: .8;
 }
 
