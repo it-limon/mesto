@@ -1,37 +1,59 @@
-let profileName = document.querySelector('.profile__info-name');
-let profileJob = document.querySelector('.profile__info-job');
+const cardsContainer = document.querySelector('.cards');
+const cardTemplate = document.querySelector('#card-template').content;
 
-let infoEditBtn = document.querySelector('.profile__info-edit-button');
+const profileName = document.querySelector('.profile__info-name');
+const profileJob = document.querySelector('.profile__info-job');
 
-let popup = document.querySelector('.popup');
-let closePopupBtn = popup.querySelector('.popup__button-close');
+const editInfoBtn = document.querySelector('.profile__info-edit-button');
 
-let formProfile = popup.querySelector('.form-profile');
-let submitProfileBtn = formProfile.querySelector('.form-profile__button-submit');
+const popup = document.querySelector('.popup');
+const closePopupBtn = popup.querySelector('.popup__button-close');
 
-let inputName = formProfile.querySelector('.form-profile__item_el_name');
-let inputJob = formProfile.querySelector('.form-profile__item_el_job');
+const formProfile = popup.querySelector('.form-profile');
+const submitProfileBtn = formProfile.querySelector('.form-profile__button-submit');
+
+const inputName = formProfile.querySelector('.form-profile__item_el_name');
+const inputJob = formProfile.querySelector('.form-profile__item_el_job');
+
+const togglePopupHandler = () => popup.classList.toggle('popup_opened');
 
 const openPopupHandler = () => {
   inputName.value = profileName.textContent;
   inputJob.value = profileJob.textContent;
 
-  popup.classList.add('popup_opened');
+  togglePopupHandler();
 }
 
-const closePopupHandler = () => {
-  popup.classList.remove('popup_opened');
-}
-
-const submitFormProfileHandler = (evt) => {
+const submitFormProfileHandler = evt => {
   evt.preventDefault();
 
   profileName.textContent = inputName.value;
   profileJob.textContent = inputJob.value;
 
-  closePopupHandler();
+  togglePopupHandler();
 }
 
-infoEditBtn.addEventListener('click', openPopupHandler);
-closePopupBtn.addEventListener('click', closePopupHandler);
+// Функция создания карточки
+const createCard = ({name, link}) => {
+  const cardsItem = cardTemplate.querySelector('.cards__item').cloneNode(true);
+
+  const cardsImage = cardsItem.querySelector('.cards__image');
+  cardsImage.src = link;
+  cardsImage.alt = name;
+
+  const cardsTitle = cardsItem.querySelector('.cards__title');
+  cardsTitle.textContent = name;
+
+  return cardsItem;
+}
+
+// Функция добавления карточки
+const addCard = (card) => cardsContainer.append(card);
+
+// Добавим начальный набор карточек
+initialCards.forEach(card => addCard(createCard(card)));
+
+// Слушатели
+editInfoBtn.addEventListener('click', openPopupHandler);
+closePopupBtn.addEventListener('click', togglePopupHandler);
 formProfile.addEventListener('submit', submitFormProfileHandler);
