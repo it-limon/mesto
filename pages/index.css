@@ -19,14 +19,12 @@
 @import url('../blocks/profile/__info/profile__info.css');
 @import url('../blocks/profile/__info-name/profile__info-name.css');
 @import url('../blocks/profile/__info-job/profile__info-job.css');
-@import url('../blocks/profile/__info-edit-button/profile__info-edit-button.css');
-@import url('../blocks/profile/__add-place-button/profile__add-place-button.css');
-
-/* places */
-@import url('../blocks/places/places.css');
+@import url('../blocks/profile/__edit-info-button/profile__edit-info-button.css');
+@import url('../blocks/profile/__add-card-button/profile__add-card-button.css');
 
 /* cards */
 @import url('../blocks/cards/cards.css');
+@import url('../blocks/cards/__list/cards__list.css');
 @import url('../blocks/cards/__item/cards__item.css');
 @import url('../blocks/cards/__image/cards__image.css');
 @import url('../blocks/cards/__title/cards__title.css');
@@ -40,14 +38,14 @@
 @import url('../blocks/popup/popup.css');
 @import url('../blocks/popup/_opened/popup_opened.css');
 @import url('../blocks/popup/__container/popup__container.css');
-@import url('../blocks/popup/__button-close/popup__button-close.css');
+@import url('../blocks/popup/__close-button/popup__close-button.css');
 
-/* form-profile */
-@import url('../blocks/form-profile/form-profile.css');
-@import url('../blocks/form-profile/__heading/form-profile__heading.css');
-@import url('../blocks/form-profile/__input-container/form-profile__input-container.css');
-@import url('../blocks/form-profile/__item/form-profile__item.css');
-@import url('../blocks/form-profile/__button-submit/form-profile__button-submit.css');
+/* form */
+@import url('../blocks/form/form.css');
+@import url('../blocks/form/__heading/form__heading.css');
+@import url('../blocks/form/__input-container/form__input-container.css');
+@import url('../blocks/form/__item/form__item.css');
+@import url('../blocks/form/__submit-button/form__submit-button.css');
 
 /* button */
 @import url('../blocks/button/button.css');

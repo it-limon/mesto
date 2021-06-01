@@ -1,4 +1,4 @@
-.form-profile__button-submit {
+.form__submit-button {
   height: 46px;
   width: 100%;
   padding: 0;
@@ -16,12 +16,12 @@
   border-radius: 2px;
 }
 
-.form-profile__button-submit:hover {
+.form__submit-button :hover {
   opacity: .8;
 }
 
 @media (min-width: 880px) {
-  .form-profile__button-submit {
+  .form__submit-button {
     font-size: 18px;
     line-height: 22px;
   }

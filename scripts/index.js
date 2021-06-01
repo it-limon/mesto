@@ -1,19 +1,19 @@
-const cardsContainer = document.querySelector('.cards');
+const cardsContainer = document.querySelector('.cards__list');
 const cardTemplate = document.querySelector('#card-template').content;
 
 const profileName = document.querySelector('.profile__info-name');
 const profileJob = document.querySelector('.profile__info-job');
 
-const editInfoBtn = document.querySelector('.profile__info-edit-button');
+const editInfoBtn = document.querySelector('.profile__edit-info-button');
 
 const popup = document.querySelector('.popup');
-const closePopupBtn = popup.querySelector('.popup__button-close');
+const closePopupBtn = popup.querySelector('.popup__close-button');
 
 const formProfile = popup.querySelector('.form-profile');
-const submitProfileBtn = formProfile.querySelector('.form-profile__button-submit');
+const submitProfileBtn = formProfile.querySelector('.form__submit-button');
 
-const inputName = formProfile.querySelector('.form-profile__item_el_name');
-const inputJob = formProfile.querySelector('.form-profile__item_el_job');
+const inputName = formProfile.querySelector('.form__item_el_profile-name');
+const inputJob = formProfile.querySelector('.form__item_el_profile-job');
 
 const togglePopupHandler = () => popup.classList.toggle('popup_opened');
 

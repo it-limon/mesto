@@ -21,15 +21,15 @@
         <div class="profile__info">
           <div class="profile__container">
             <h1 class="profile__info-name">Жак-Ив Кусто</h1>
-            <button class="button profile__info-edit-button" type="button" aria-label="Редактировать профиль"></button>
+            <button class="button profile__edit-info-button" type="button" aria-label="Редактировать профиль"></button>
           </div>
           <p class="profile__info-job">Исследователь океана</p>
         </div>
-        <button class="button profile__add-place-button" type="button" aria-label="Добавить карточку"></button>
+        <button class="button profile__add-card-button" type="button" aria-label="Добавить карточку"></button>
       </section>
 
-      <section class="places">
-        <ul class="cards">
+      <section class="cards">
+        <ul class="cards__list">
 
         </ul>
       </section>
@@ -41,15 +41,15 @@
 
     <section class="popup">
       <div class="popup__container">
-        <form class="form-profile" name="form-profile">
-          <h2 class="form-profile__heading">Редактировать профиль</h2>
-          <fieldset class="form-profile__input-container">
-            <input class="form-profile__item form-profile__item_el_name" type="text" id="profile-name" name="profile-name" placeholder="Имя" required>
-            <input class="form-profile__item form-profile__item_el_job" type="text" id="profile-job" name="profile-job" placeholder="О себе" required>
+        <form class="form form-profile" name="form-profile">
+          <h2 class="form__heading">Редактировать профиль</h2>
+          <fieldset class="form__input-container">
+            <input class="form__item form__item_el_profile-name" type="text" id="profile-name" name="profile-name" placeholder="Имя" required>
+            <input class="form__item form__item_el_profile-job" type="text" id="profile-job" name="profile-job" placeholder="О себе" required>
           </fieldset>
-          <button class="form-profile__button-submit" type="submit">Сохранить</button>
+          <button class="form__submit-button" type="submit">Сохранить</button>
         </form>
-        <button class="popup__button-close" type="button" aria-label="Закрыть"></button>
+        <button class="popup__close-button" type="button" aria-label="Закрыть"></button>
       </div>
     </section>
   </div>

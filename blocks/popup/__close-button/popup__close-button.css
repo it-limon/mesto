@@ -1,4 +1,4 @@
-.popup__button-close {
+.popup__close-button {
   width: 26px;
   height: 26px;
   padding: 0;
@@ -15,14 +15,14 @@
 }
 
 @media (min-width: 425px) {
-  .popup__button-close {
+  .popup__close-button {
     top: -26px;
     right: -26px;
   }
 }
 
 @media (min-width: 619px) {
-  .popup__button-close {
+  .popup__close-button {
     width: 32px;
     height: 32px;
     top: -32px;
@@ -31,7 +31,7 @@
 }
 
 @media (min-width: 880px) {
-  .popup__button-close {
+  .popup__close-button {
     width: 40px;
     height: 40px;
     top: -40px;
