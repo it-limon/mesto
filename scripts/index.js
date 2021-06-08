@@ -7,8 +7,8 @@ const profilePopup = document.querySelector('.popup-profile');
 const closeProfilePopupBtn = profilePopup.querySelector('.popup__close-button');
 
 const profileForm = profilePopup.querySelector('.form-profile');
-const inputProfileName = profileForm.querySelector('.form__item_el_profile-name');
-const inputProfileJob = profileForm.querySelector('.form__item_el_profile-job');
+const inputProfileName = profileForm.querySelector('.form__input_el_profile-name');
+const inputProfileJob = profileForm.querySelector('.form__input_el_profile-job');
 
 const openProfilePopupHandler = () => {
   inputProfileName.value = profileName.textContent;
@@ -36,8 +36,8 @@ const cardPopup = document.querySelector('.popup-card');
 const closeCardPopupBtn = cardPopup.querySelector('.popup__close-button');
 
 const cardForm = cardPopup.querySelector('.form-card');
-const inputCardName = cardForm.querySelector('.form__item_el_card-name');
-const inputCardLink = cardForm.querySelector('.form__item_el_card-link');
+const inputCardName = cardForm.querySelector('.form__input_el_card-name');
+const inputCardLink = cardForm.querySelector('.form__input_el_card-link');
 
 const openCardPopupHandler = () => {
   cardForm.reset();
