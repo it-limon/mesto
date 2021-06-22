@@ -1,3 +1,7 @@
+import initialCards from './initial-cards.js'
+import Card from './Card.js';
+import FormValidator, { validationSettings } from './FormValidator.js';
+
 // --- Profile ---
 const profileName = document.querySelector('.profile__name');
 const profileJob = document.querySelector('.profile__job');
@@ -56,31 +60,10 @@ const openCardPopupHandler = () => {
 const submitCardFormHandler = (evt) => {
   evt.preventDefault();
 
-  addCard(getCard({name: inputCardName.value, link: inputCardLink.value}));
+  const newCard = new Card({name: inputCardName.value, link: inputCardLink.value}, '#card-template', openImagePopupHandler).generateCard();
+  addCard(newCard);
   closePopup(cardPopup);
 }
-
-const deleteCardHandler = (evt) => evt.target.closest('.cards__item').remove();
-const toggleCardLikeHandler = (evt) => evt.target.classList.toggle('cards__like_active');
-
-// Функция создания карточки
-const getCard = ({name, link}) => {
-  const cardsItem = cardTemplate.querySelector('.cards__item').cloneNode(true);
-
-  const cardsImage = cardsItem.querySelector('.cards__image');
-  cardsImage.addEventListener('click', () => openImagePopupHandler(name, link));
-  cardsImage.alt = name;
-  cardsImage.src = link;
-
-  cardsItem.querySelector('.cards__title').textContent = name;
-  cardsItem.querySelector('.cards__like').addEventListener('click', toggleCardLikeHandler);
-  cardsItem.querySelector('.cards__delete-button').addEventListener('click', deleteCardHandler);
-
-  return cardsItem;
-}
-
-// Функция добавления карточки
-const addCard = (card) => cardsContainer.prepend(card);
 
 // --- Image ---
 const imagePopup = document.querySelector('.popup-image');
@@ -142,8 +125,21 @@ const resetFormErrors = (formElement) => {
   });
 }
 
+// Функция добавления карточки
+const addCard = (card) => cardsContainer.prepend(card);
+
 // Добавим начальный набор карточек
-initialCards.forEach((card) => addCard(getCard(card)));
+initialCards.forEach((card) => {
+  const newCard = new Card(card, '#card-template', openImagePopupHandler).generateCard();
+  addCard(newCard);
+});
+
+// подключим валидацию
+const formList = Array.from(document.querySelectorAll(validationSettings.formSelector));
+formList.forEach((form) => {
+  const validator = new FormValidator(validationSettings, form);
+  validator.enableValidation();
+});
 
 // Слушатели
 editProfileBtn.addEventListener('click', openProfilePopupHandler);
