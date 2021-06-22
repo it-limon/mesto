@@ -137,7 +137,7 @@ const resetFormErrors = (formElement) => {
 
   const errorList = Array.from(formElement.querySelectorAll('.form__input-error'));
   errorList.forEach((errorElement) => {
-    errorElement.classList.remove('form__input_type_error');
+    errorElement.classList.remove('form__input-error_visible');
     errorElement.textContent = '';
   });
 }
