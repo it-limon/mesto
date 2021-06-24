@@ -1,4 +1,4 @@
-.cards__like {
+.cards__button-like {
   width: 22px;
   height: 19px;
   padding: 0;
@@ -6,7 +6,7 @@
   justify-self: end;
   border: none;
 
-  background: url('../../../images/cards-like.svg') center / cover no-repeat;
+  background: url('../../../images/button-like.svg') center / cover no-repeat;
 
   align-self: center;
 
@@ -14,6 +14,6 @@
   cursor: pointer;
 }
 
-.cards__like:hover {
+.cards__button-like:hover {
   opacity: .5;
 }
