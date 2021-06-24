@@ -58,7 +58,7 @@ const openPopupCard = () => {
 const submitFormCard = (evt) => {
   evt.preventDefault();
 
-  const newCard = new Card({name: inputCardName.value, link: inputCardLink.value}, '#card-template', openImagePopup).generateCard();
+  const newCard = new Card({name: inputCardName.value, link: inputCardLink.value}, '#card-template', openPopupImage).generateCard();
   addCard(newCard);
   closePopup(popupCard);
 }
