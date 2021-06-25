@@ -4,7 +4,6 @@ export default class Card {
     this._link = data.link;
     this._cardSelector = cardSelector;
     this._openCard = openCard;
-    this._deleteCard = this._deleteCard.bind(this);
   }
 
   _getTemplate = () => {
