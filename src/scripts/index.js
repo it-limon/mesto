@@ -1,4 +1,5 @@
 import '../pages/index.css';
+import Section from './Section.js';
 import Card from './Card.js';
 import FormValidator from './FormValidator.js';
 import { INITIAL_CARDS, VALIDATION_SETTINGS } from './constants.js';
@@ -23,8 +24,6 @@ const buttonEditProfile = document.querySelector('.profile__button-edit-profile'
 const buttonClosePopupProfile = popupProfile.querySelector('.popup__button-close');
 const buttonClosePopupCard = popupCard.querySelector('.popup__button-close');
 const buttonClosePopupImage = popupImage.querySelector('.popup__button-close');
-
-const cardsList = document.querySelector('.cards__list');
 
 const img = popupImage.querySelector('.popup__image');
 const caption = popupImage.querySelector('.popup__image-caption');
@@ -59,8 +58,7 @@ const openPopupCard = () => {
 const submitFormCard = (evt) => {
   evt.preventDefault();
 
-  const newCard = new Card({name: inputCardName.value, link: inputCardLink.value}, '#card-template', openPopupImage).generateCard();
-  addCard(newCard);
+  cardsList.addItem(new Card({name: inputCardName.value, link: inputCardLink.value}, '#card-template', openPopupImage).generateCard());
   closePopup(popupCard);
 }
 
@@ -106,10 +104,6 @@ const closePopup = (popup) => {
   popup.classList.remove('popup_opened');
 }
 
-// ------------------------------
-
-const addCard = (card) => cardsList.prepend(card);
-
 // --- Listeners ---
 
 buttonEditProfile.addEventListener('click', openPopupProfile);
@@ -123,10 +117,16 @@ formCard.addEventListener('submit', submitFormCard);
 buttonClosePopupImage.addEventListener('click', () => closePopup(popupImage));
 
 // Add initial cards
-INITIAL_CARDS.forEach((card) => {
-  const newCard = new Card(card, '#card-template', openPopupImage).generateCard();
-  addCard(newCard);
-});
+const cardsList = new Section({
+  items: INITIAL_CARDS,
+  renderer: (item) => {
+    const card = new Card(item, '#card-template', openPopupImage);
+    const cardElement = card.generateCard();
+    cardsList.addItem(cardElement);
+  }
+}, '.cards__list')
+
+cardsList.renderItems();
 
 // Enable validation
 const validatorFormProfile = new FormValidator(VALIDATION_SETTINGS, formProfile);
