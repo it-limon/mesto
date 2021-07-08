@@ -12,7 +12,10 @@ https://it-limon.github.io/mesto/index.html
 
 - HTML – Hyper Text Markup Language;
 - CSS – Cascading Style Sheets;
-- JavaScript –  мультипарадигменный язык программирования.
+- JavaScript – мультипарадигменный язык программирования;
+- Webpack - сборщик проекта;
+- Babel - транспилятор js-кода;
+- Модули для минификации и автопрефиксов.
 
 ## Планы по доработке
 
