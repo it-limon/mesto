@@ -1,4 +1,4 @@
-export const INITIAL_CARDS = [
+export const initial_cards = [
   {
     name: 'Архыз',
     link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
@@ -25,7 +25,7 @@ export const INITIAL_CARDS = [
   }
 ];
 
-export const VALIDATION_SETTINGS = {
+export const validation_settings = {
   formSelector: '.form',
   inputSelector: '.form__input',
   submitButtonSelector: '.form__button-submit',
