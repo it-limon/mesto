@@ -1,10 +1,9 @@
 export default class FormValidator {
-  constructor(validationSettings, formElement, isButtonSubmitDisabled) {
+  constructor(validationSettings, formElement) {
     this._validationSettings = validationSettings;
     this._formElement = formElement;
     this._inputList = Array.from(this._formElement.querySelectorAll(validationSettings.inputSelector));
     this._buttonElement = this._formElement.querySelector(validationSettings.submitButtonSelector);
-    this._isButtonSubmitDisabled = isButtonSubmitDisabled;
   }
 
   _hasInvalidInput = () => {
@@ -75,27 +74,10 @@ export default class FormValidator {
   }
 
   resetValidation = () => {
-    const {
-      inputSelector,
-      inputErrorClass,
-      errorClass,
-      inactiveButtonClass
-    } = this._validationSettings;
-
     this._inputList.forEach((inputElement) => {
-      inputElement.classList.remove(inputErrorClass);
+      this._hideInputError(inputElement);
     });
 
-    const errorList = Array.from(this._formElement.querySelectorAll(`${inputSelector}-error`));
-    errorList.forEach((errorElement) => {
-      errorElement.classList.remove(errorClass);
-      errorElement.textContent = '';
-    });
-
-    if (this._isButtonSubmitDisabled) {
-      this._buttonElement.classList.add(inactiveButtonClass);
-    } else {
-      this._buttonElement.classList.remove(inactiveButtonClass);
-    }
+    this._toggleButtonState();
   }
 }
