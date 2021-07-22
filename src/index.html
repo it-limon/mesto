@@ -16,7 +16,10 @@
 
     <main class="content">
       <section class="profile">
-        <img class="profile__avatar" src="<%=require('./images/avatar.png')%>" alt="Аватар">
+        <div class="profile__avatar-wrapper">
+          <img class="profile__avatar" src="<%=require('./images/avatar.png')%>" alt="Аватар">
+          <button class="profile__button-edit-avatar" type="button" aria-label="Обновить аватар"></button>
+        </div>
         <div class="profile__info">
           <div class="profile__container">
             <h1 class="profile__name">Жак-Ив Кусто</h1>
@@ -89,11 +92,38 @@
     </section>
   </div>
 
+  <section class="popup popup-avatar">
+    <div class="popup__container">
+      <form class="form form-avatar" name="form-avatar">
+        <h2 class="form__heading">Обновить аватар</h2>
+        <label class="form__field">
+          <input class="form__input form__input_el_avatar-link" type="url" id="avatar-link" name="avatar-link" placeholder="Ссылка на аватар" required>
+          <span class="form__input-error avatar-link-error"></span>
+        </label>
+        <button class="form__button-submit" type="submit">Сохранить</button>
+      </form>
+      <button class="button popup__button-close" type="button" aria-label="Закрыть"></button>
+    </div>
+  </section>
+
+  <section class="popup popup-delete-card">
+    <div class="popup__container">
+      <form class="form form-delete-card" name="form-delete-card">
+        <h2 class="form__heading">Вы уверены?</h2>
+        <button class="form__button-submit" type="submit">Да</button>
+      </form>
+      <button class="button popup__button-close" type="button" aria-label="Закрыть"></button>
+    </div>
+  </section>
+
   <template id="card-template">
     <li class="cards__item">
       <img class="cards__image" src="#" alt="#">
       <h2 class="cards__title"></h2>
-      <button class="cards__button-like" type="button" aria-label="Оценить"></button>
+        <div class="cards__like-container">
+          <button class="cards__button-like" type="button" aria-label="Оценить"></button>
+          <span class="cards__like-counter">9</span>
+        </div>
       <button class="button cards__button-delete" type="button" aria-label="Удалить"></button>
     </li>
   </template>

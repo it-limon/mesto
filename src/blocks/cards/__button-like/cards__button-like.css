@@ -1,14 +1,11 @@
 .cards__button-like {
   width: 22px;
   height: 19px;
+  margin-bottom: 5px;
   padding: 0;
-  margin-right: 20px;
-  justify-self: end;
   border: none;
 
   background: url('../../../images/button-like.svg') center / cover no-repeat;
-
-  align-self: center;
 
   transition: opacity .3s linear;
   cursor: pointer;
