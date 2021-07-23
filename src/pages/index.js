@@ -39,7 +39,10 @@ const generateCard = (item) => {
     handleDeleteClick: (cardId) => {
       popupConfirm.setSubmitAction(() => {
         api.deleteCard(cardId)
-          .then(() => card.deleteCard())
+          .then(() => {
+            card.deleteCard();
+            popupConfirm.close();
+          })
           .catch(err => console.log(err));
       });
       popupConfirm.open();
@@ -59,9 +62,9 @@ const api = new Api(apiOptions);
 
 const promises = [api.getUserInfo(), api.getInitialCards()];
 Promise.all(promises)
-  .then((results) => {
-    userInfo.setUserInfo(results[0]);
-    cardsList.renderItems(results[1].reverse())
+  .then(([userData, initialCards]) => {
+    userInfo.setUserInfo(userData);
+    cardsList.renderItems(initialCards.reverse())
   })
   .catch(err => console.log(err));
 
@@ -75,7 +78,10 @@ const popupProfile = new PopupWithForm({
     const job = item['profile-job'];
 
     api.setUserInfo(name, job)
-      .then(info => userInfo.setUserInfo(info))
+      .then(info => {
+        userInfo.setUserInfo(info);
+        popupProfile.close();
+      })
       .catch(err => console.log(err))
       .finally(() => popupProfile.renderSaving(false));
   }
@@ -93,6 +99,7 @@ const popupCard = new PopupWithForm({
       .then(data => {
         const cardElement = generateCard(data);
         cardsList.addItem(cardElement);
+        popupCard.close();
       })
       .catch(err => console.log(err))
       .finally(() => popupCard.renderSaving(false));
@@ -106,7 +113,10 @@ const popupAvatar = new PopupWithForm({
     const avatar = item['avatar-link'];
 
     api.setUserAvatar(avatar)
-      .then(info => userInfo.setUserInfo(info))
+      .then(info => {
+        userInfo.setUserInfo(info);
+        popupAvatar.close();
+      })
       .catch(err => console.log(err))
       .finally(() => popupAvatar.renderSaving(false));
   }
@@ -132,8 +142,6 @@ buttonEditProfile.addEventListener('click', () => {
 });
 
 buttonEditAvatar.addEventListener('click', () => {
-  const avatar = [userInfo.getUserInfo().userAvatar];
-  popupAvatar.setInputValues(avatar);
   validatorFormAvatar.resetValidation();
   popupAvatar.open();
 });
