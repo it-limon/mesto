@@ -23,13 +23,13 @@ export default class Card {
     return cardElement;
   }
 
-  _deleteCard = () => {
-    this._element.remove();
-    this._element = null;
-  }
-
   _isLiked = () => {
     return this._likes.some(like => like._id === this._userId);
+  }
+
+  deleteCard = () => {
+    this._element.remove();
+    this._element = null;
   }
 
   setLikesInfo = (info) => {
@@ -62,7 +62,7 @@ export default class Card {
 
     let buttonDelete = this._element.querySelector('.cards__button-delete');
     if (this._ownerId === this._userId) {
-      buttonDelete.addEventListener('click', this._deleteCard);
+      buttonDelete.addEventListener('click', () => this._handleDeleteClick(this._id));
     } else {
       buttonDelete.remove();
       buttonDelete = null;

@@ -11,23 +11,12 @@ import { validationSettings, apiOptions } from '../utils/constants.js';
 const buttonAddCard = document.querySelector('.profile__button-add-card');
 const buttonEditProfile = document.querySelector('.profile__button-edit-profile');
 const buttonEditAvatar = document.querySelector('.profile__button-edit-avatar');
-const buttonConfirmDeleteCard = document.forms['form-delete-card'].querySelector('.form__button-submit');
-
-const api = new Api(apiOptions);
 
 const userInfo = new UserInfo({
   userNameSelector: '.profile__name',
   userJobSelector: '.profile__job',
   userAvatarSelector: '.profile__avatar'
 });
-
-const promises = [api.getUserInfo(), api.getInitialCards()];
-Promise.all(promises)
-  .then((results) => {
-    userInfo.setUserInfo(results[0]);
-    cardsList.renderItems(results[1].reverse())
-  })
-  .catch(err => console.log(err));
 
 const generateCard = (item) => {
   const card = new Card({
@@ -46,11 +35,34 @@ const generateCard = (item) => {
           .catch(err => console.log(err));
       }
     },
-    handleDeleteClick: () => popupDeleteCard.open()
+    handleDeleteClick: (cardId) => {
+      popupDeleteCard.setSubmitAction(() => {
+        api.deleteCard(cardId)
+          .then(() => card.deleteCard())
+          .catch(err => console.log(err));
+      });
+      popupDeleteCard.open();
+    }
   });
 
   return card.generateCard();
 }
+
+const cardsList = new Section(
+  (item) => {
+    const cardElement = generateCard(item);
+    cardsList.addItem(cardElement);
+  }, '.cards__list');
+
+const api = new Api(apiOptions);
+
+const promises = [api.getUserInfo(), api.getInitialCards()];
+Promise.all(promises)
+  .then((results) => {
+    userInfo.setUserInfo(results[0]);
+    cardsList.renderItems(results[1].reverse())
+  })
+  .catch(err => console.log(err));
 
 // Popups
 const popupProfile = new PopupWithForm({
@@ -101,15 +113,8 @@ const popupAvatar = new PopupWithForm({
 
 const popupDeleteCard = new PopupWithForm({
   popupSelector: '.popup-delete-card',
-  handleFormSubmit: (item) => {
-    // const avatar = item['avatar-link'];
-
-    api.deleteCard(cardId)
-    //   .then(info => userInfo.setUserInfo(info))
-    //   .catch(err => console.log(err));
-  }
+  handleFormSubmit: () => {}
 });
-
 const popupImage = new PopupWithImage('.popup-image');
 
 popupProfile.setEventListeners();
@@ -134,19 +139,10 @@ buttonEditAvatar.addEventListener('click', () => {
   popupAvatar.open();
 });
 
-buttonConfirmDeleteCard.addEventListener('click', popupDeleteCard.open);
-
 buttonAddCard.addEventListener('click', () => {
   validatorFormCard.resetValidation();
   popupCard.open();
 });
-
-// Add initial cards
-const cardsList = new Section(
-  (item) => {
-    const cardElement = generateCard(item);
-    cardsList.addItem(cardElement);
-  }, '.cards__list')
 
 // Enable validation
 const validatorFormProfile = new FormValidator(validationSettings, document.forms['form-profile']);
