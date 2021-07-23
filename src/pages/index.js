@@ -3,6 +3,7 @@ import Api from '../components/Api.js';
 import Section from '../components/Section.js';
 import PopupWithForm from '../components/PopupWithForm.js';
 import PopupWithImage from '../components/PopupWithImage.js';
+import PopupWithConfirm from '../components/PopupWithConfirm.js';
 import Card from '../components/Card.js';
 import UserInfo from '../components/UserInfo.js';
 import FormValidator from '../components/FormValidator.js';
@@ -36,12 +37,12 @@ const generateCard = (item) => {
       }
     },
     handleDeleteClick: (cardId) => {
-      popupDeleteCard.setSubmitAction(() => {
+      popupConfirm.setSubmitAction(() => {
         api.deleteCard(cardId)
           .then(() => card.deleteCard())
           .catch(err => console.log(err));
       });
-      popupDeleteCard.open();
+      popupConfirm.open();
     }
   });
 
@@ -111,17 +112,15 @@ const popupAvatar = new PopupWithForm({
   }
 });
 
-const popupDeleteCard = new PopupWithForm({
-  popupSelector: '.popup-delete-card',
-  handleFormSubmit: () => {}
-});
+const popupConfirm = new PopupWithConfirm('.popup-confirm');
+
 const popupImage = new PopupWithImage('.popup-image');
 
 popupProfile.setEventListeners();
 popupCard.setEventListeners();
 popupImage.setEventListeners();
 popupAvatar.setEventListeners();
-popupDeleteCard.setEventListeners();
+popupConfirm.setEventListeners();
 
 // Listeners
 buttonEditProfile.addEventListener('click', () => {

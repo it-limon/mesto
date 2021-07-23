@@ -16,10 +16,9 @@
 
     <main class="content">
       <section class="profile">
-        <div class="profile__avatar-wrapper">
+        <button class="profile__button-edit-avatar" type="button" aria-label="Обновить аватар">
           <img class="profile__avatar" src="<%=require('./images/avatar.png')%>" alt="Аватар">
-          <button class="profile__button-edit-avatar" type="button" aria-label="Обновить аватар"></button>
-        </div>
+        </button>
         <div class="profile__info">
           <div class="profile__container">
             <h1 class="profile__name">Жак-Ив Кусто</h1>
@@ -106,9 +105,9 @@
     </div>
   </section>
 
-  <section class="popup popup-delete-card">
+  <section class="popup popup-confirm">
     <div class="popup__container">
-      <form class="form form-delete-card" name="form-delete-card">
+      <form class="form form-confirm" name="form-confirm">
         <h2 class="form__heading">Вы уверены?</h2>
         <button class="form__button-submit" type="submit">Да</button>
       </form>
